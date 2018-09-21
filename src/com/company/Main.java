@@ -5,7 +5,11 @@ import java.lang.System;
 public class Main {
     public static int n = 9;
     public int[] _array = {1,2,5,8,9,3,4,7,6};
+
     public void insertionSort(){
+        insertionSort(n, _array);
+    }
+    public void insertionSort(int n, int[]_array){
         int i, j;
         int x;
         for (i=0; i < n; i++){
@@ -19,8 +23,43 @@ public class Main {
 
         }
     }
+    public void merge(int low, int mid, int high){
+        int i = low;
+        int j = mid +1;
+        int k = low;
+        int [] new_array = new int[high];
+        while (i <= mid && j <= high){
+            if (_array[i] < _array[j]){
+                new_array[k] = _array[i];
+                i++;
+            }
+            else{
+                new_array[k] = _array[j];
+                j++;
+            }
+            k++;
+        }
+        if (i > mid){
+            //move _array[j] through _array[high] to new_array[k] through new_array[high]
+        }
+        else{
+            //move _array[i] through _array[mid] to new_array[k] through new_array[high]
+        }
+        //move new_array[low] through new_array[high] to _array[low] through _array[high]
+    }
+    public void mergeSort(){
+        mergeSort(0, n);
+    }
+    public void mergeSort(int low, int high){
+        int mid;
+        if (low < high){
+            mid =  (low + high) / 2;
+            mergeSort(low, mid);
+            mergeSort((mid + 1) ,  high);
+            merge(low, mid, high);
+        }
 
-
+    }
     public void view_array(){
         view_array(n,_array);
     }
@@ -42,7 +81,6 @@ public class Main {
         System.out.println("\n");
         long totalTime = endTime - startTime;
         System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
-
 
     }
 }
