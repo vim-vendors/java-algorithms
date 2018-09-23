@@ -24,28 +24,45 @@ public class Main {
         }
     }
     public void merge(int low, int mid, int high){
-        int i = low;
-        int j = mid +1;
-        int k = low;
-        int [] new_array = new int[high];
-        while (i <= mid && j <= high){
-            if (_array[i] < _array[j]){
-                new_array[k] = _array[i];
-                i++;
-            }
-            else{
-                new_array[k] = _array[j];
-                j++;
-            }
-            k++;
-        }
-        if (i > mid){
-            //move _array[j] through _array[high] to new_array[k] through new_array[high]
-        }
-        else{
-            //move _array[i] through _array[mid] to new_array[k] through new_array[high]
-        }
-        //move new_array[low] through new_array[high] to _array[low] through _array[high]
+//        int i = low;
+//        int j = mid +1;
+//        int k = low;
+//
+//        int [] new_array = new int[high];
+//        while (i <= mid && j <= high){
+//            if (_array[i] < _array[j]){
+//                new_array[k] = _array[i];
+//                i++;
+//            }
+//            else{
+//                new_array[k] = _array[j];
+//                j++;
+//            }
+//            k++;
+//        }
+//        if (i > mid){
+//            //move _array[j] through _array[high] to new_array[k] through new_array[high]
+//
+//           // int k_index = k;
+//
+//            for (int j_index = j; j_index < high; j_index++){
+//                new_array[k] = _array[j_index];
+//                k++;
+//            }
+//
+//        }
+//        else{
+//            //move _array[i] through _array[mid] to new_array[k] through new_array[high]
+//            //int k_index = k;
+//            for (int i_index = i; i_index < mid; i_index++){
+//                new_array[k] = _array[i_index];
+//                k++;
+//            }
+//        }
+//        //move new_array[low] through new_array[high] to _array[low] through _array[high]
+//        for (int index = low; index < high; index++){
+//            _array[index] = new_array[index];
+//        }
     }
     public void mergeSort(){
         mergeSort(0, n);
@@ -69,18 +86,33 @@ public class Main {
     }
     public static void main(String[] args) {
 
+//        Main my_program = new Main();
+//        System.out.print("Pre insertion sort the array is currently : " );
+//        my_program.view_array();
+//        System.out.println("\n");
+//        long startTime = System.nanoTime();
+//        my_program.insertionSort();
+//        long endTime   = System.nanoTime();
+//        System.out.print("Post insertion sort the array is now : " );
+//        my_program.view_array();
+//        System.out.println("\n");
+//        long totalTime = endTime - startTime;
+//        System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
+
         Main my_program = new Main();
-        System.out.print("Pre insertion sort the array is currently : " );
+        System.out.print("Pre merge sort the array is currently : " );
         my_program.view_array();
         System.out.println("\n");
-        long startTime = System.nanoTime();
-        my_program.insertionSort();
-        long endTime   = System.nanoTime();
-        System.out.print("Post insertion sort the array is now : " );
+        //long startTime = System.nanoTime();
+        my_program.mergeSort();
+        //long endTime   = System.nanoTime();
+        System.out.print("Post merge sort the array is now : " );
         my_program.view_array();
         System.out.println("\n");
-        long totalTime = endTime - startTime;
-        System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
+        //long totalTime = endTime - startTime;
+        //System.out.println("The time for merge sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
+
+
 
     }
 }
