@@ -23,57 +23,53 @@ public class Main {
 
         }
     }
-    public void merge(int low, int mid, int high){
-//        int i = low;
-//        int j = mid +1;
-//        int k = low;
-//
-//        int [] new_array = new int[high];
-//        while (i <= mid && j <= high){
-//            if (_array[i] < _array[j]){
-//                new_array[k] = _array[i];
-//                i++;
-//            }
-//            else{
-//                new_array[k] = _array[j];
-//                j++;
-//            }
-//            k++;
-//        }
-//        if (i > mid){
-//            //move _array[j] through _array[high] to new_array[k] through new_array[high]
-//
-//           // int k_index = k;
-//
-//            for (int j_index = j; j_index < high; j_index++){
-//                new_array[k] = _array[j_index];
-//                k++;
-//            }
-//
-//        }
-//        else{
-//            //move _array[i] through _array[mid] to new_array[k] through new_array[high]
-//            //int k_index = k;
-//            for (int i_index = i; i_index < mid; i_index++){
-//                new_array[k] = _array[i_index];
-//                k++;
-//            }
-//        }
-//        //move new_array[low] through new_array[high] to _array[low] through _array[high]
-//        for (int index = low; index < high; index++){
-//            _array[index] = new_array[index];
-//        }
+
+    public void merge(int [] temp_array, int low, int mid, int high){
+
+        int k = 0; //workspace index
+        int i = low; //low pointer
+        //int j = mid +1;
+        int j = high -1; //mid pointer
+        int num = high - low + 1;
+
+        //int [] new_array = new int[high];
+        while (low <= j && mid <= high){
+            if (_array[i] < _array[mid]){
+                temp_array[k++] = _array[low++];
+                //i++;
+            }
+            else{
+                temp_array[k++] = _array[mid++];
+                //j++;
+            }
+           // k++;
+        }
+
+        while (i <= j) {
+            temp_array[k++] = _array[low++];
+        }
+
+        while (mid <= high){
+            temp_array[k++] = _array[mid++];
+        }
+
+        for (int index =0; index < num; index++){
+            _array[i + k] = temp_array[k];
+        }
+
     }
     public void mergeSort(){
-        mergeSort(0, n);
+        int [] temp_array = new int[n];
+        mergeSort(temp_array, 0, n-1);
     }
-    public void mergeSort(int low, int high){
-        int mid;
-        if (low < high){
-            mid =  (low + high) / 2;
-            mergeSort(low, mid);
-            mergeSort((mid + 1) ,  high);
-            merge(low, mid, high);
+    public void mergeSort(int [] temp_array, int low, int high){
+        if (low == high)
+            return;
+        else{
+            int mid = (low + high) / 2;
+            mergeSort(temp_array, low, mid);
+            mergeSort(temp_array, (mid + 1) ,  high);
+            merge(temp_array, low, (mid+1), high);
         }
 
     }
