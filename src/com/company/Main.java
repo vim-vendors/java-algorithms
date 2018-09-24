@@ -24,55 +24,6 @@ public class Main {
         }
     }
 
-    public void merge(int [] temp_array, int low, int mid, int high){
-
-        int k = 0; //workspace index
-        int i = low; //low pointer
-        //int j = mid +1;
-        int j = high -1; //mid pointer
-        int num = high - low + 1;
-
-        //int [] new_array = new int[high];
-        while (low <= j && mid <= high){
-            if (_array[i] < _array[mid]){
-                temp_array[k++] = _array[low++];
-                //i++;
-            }
-            else{
-                temp_array[k++] = _array[mid++];
-                //j++;
-            }
-           // k++;
-        }
-
-        while (i <= j) {
-            temp_array[k++] = _array[low++];
-        }
-
-        while (mid <= high){
-            temp_array[k++] = _array[mid++];
-        }
-
-        for (int index =0; index < num; index++){
-            _array[i + k] = temp_array[k];
-        }
-
-    }
-    public void mergeSort(){
-        int [] temp_array = new int[n];
-        mergeSort(temp_array, 0, n-1);
-    }
-    public void mergeSort(int [] temp_array, int low, int high){
-        if (low == high)
-            return;
-        else{
-            int mid = (low + high) / 2;
-            mergeSort(temp_array, low, mid);
-            mergeSort(temp_array, (mid + 1) ,  high);
-            merge(temp_array, low, (mid+1), high);
-        }
-
-    }
     public void view_array(){
         view_array(n,_array);
     }
@@ -80,6 +31,60 @@ public class Main {
         IntStream.range(0, n)
                 .forEach(i -> System.out.print(_array[i] + " "));
     }
+
+    public void mergeSort(){
+        mergeSort(n, _array);
+    }
+    public void mergeSort(int upper_bound, int [] old_array){
+        if (upper_bound > 1){
+            int lower_bound = (upper_bound /2); //1/2 old array
+            int [] left_temp = new int[lower_bound];
+            int midpoint = upper_bound - lower_bound;
+            int [] right_temp = new int[midpoint];
+
+            for (int index =0; index < lower_bound; index++){
+                left_temp[index] = old_array[index];
+            }
+            int counter = 0;
+            for (int index = lower_bound; index < upper_bound; index++){
+                 right_temp[counter++] = old_array[index];
+            }
+            mergeSort(lower_bound, left_temp);
+            mergeSort(midpoint, right_temp);
+            merge(lower_bound, midpoint, left_temp, right_temp, old_array);
+        }
+    }
+    public void merge(int lower_bound, int upper_bound, int [] left_temp, int [] right_temp, int [] old_array){
+        int i_index = 0;
+        int j_index = 0;
+        int k_index = 0;
+        while (i_index <= lower_bound && j_index <= upper_bound){
+            if (left_temp[i_index] < right_temp[j_index]){
+                old_array[k_index++] = left_temp[i_index++];
+                //i_index++;
+            }
+            else{
+                old_array[k_index++] = right_temp[j_index++];
+                //j_index++;
+            }
+            //k_index++;
+        }
+        if (i_index > lower_bound){
+            //copy right_temp[j_index] through right_temp[upper_bound] to
+            //old_array[k_index] through old_array[lower_bound + upper_bound];
+            for (int index = j_index; index < upper_bound; index++){
+                old_array[k_index++] = right_temp[index];
+            }
+        }
+        else        {
+            //copy left_temp[i_index] through left_temp[lower_bound] to old_array[k_index] through
+            //old_array[lower_bound + upper_bound];
+            for (int index = i_index; index < lower_bound; index++){
+                old_array[k_index++] = left_temp[index];
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
 //        Main my_program = new Main();
