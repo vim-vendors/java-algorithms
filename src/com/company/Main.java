@@ -85,28 +85,39 @@ public class Main {
         }
     }
 
+
+    public void quickSort(){
+
+    }
     public static void main(String[] args) {
 
-//        Main my_program = new Main();
-//        System.out.print("Pre insertion sort the array is currently : " );
-//        my_program.view_array();
-//        System.out.println("\n");
-//        long startTime = System.nanoTime();
-//        my_program.insertionSort();
-//        long endTime   = System.nanoTime();
-//        System.out.print("Post insertion sort the array is now : " );
-//        my_program.view_array();
-//        System.out.println("\n");
-//        long totalTime = endTime - startTime;
-//        System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
+//          Insertion Sort section
+
+/*
+        Main my_program = new Main();
+        System.out.print("Pre insertion sort the array is currently : " );
+        my_program.view_array();
+        System.out.println("\n");
+        long startTime = System.nanoTime();
+        my_program.insertionSort();
+        long endTime   = System.nanoTime();
+        System.out.print("Post insertion sort the array is now : " );
+        my_program.view_array();
+        System.out.println("\n");
+        long totalTime = endTime - startTime;
+        System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
+
+*/
+
+//        Merge Sort section
 
         Main my_program = new Main();
         System.out.print("Pre merge sort the array is currently : " );
         my_program.view_array();
         System.out.println("\n");
-        //long startTime = System.nanoTime();
+        long startTime = System.nanoTime();
         my_program.mergeSort();
-        //long endTime   = System.nanoTime();
+        long endTime   = System.nanoTime();
         System.out.print("Post merge sort the array is now : " );
         my_program.view_array();
         System.out.println("\n");
