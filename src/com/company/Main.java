@@ -3,8 +3,8 @@ package com.company;
 import java.util.stream.IntStream; //experimenting with functional for loop for formatting
 import java.lang.System;
 public class Main {
-    public static int n = 9;
-    public int[] _array = {1,2,5,8,9,3,4,7,6};
+    public static int n = 4;
+    public int[] _array = {1,2,5, 0};
 
     public void insertionSort(){
         insertionSort(n, _array);
@@ -24,48 +24,48 @@ public class Main {
         }
     }
     public void merge(int low, int mid, int high){
-//        int i = low;
-//        int j = mid +1;
-//        int k = low;
-//
-//        int [] new_array = new int[high];
-//        while (i <= mid && j <= high){
-//            if (_array[i] < _array[j]){
-//                new_array[k] = _array[i];
-//                i++;
-//            }
-//            else{
-//                new_array[k] = _array[j];
-//                j++;
-//            }
-//            k++;
-//        }
-//        if (i > mid){
-//            //move _array[j] through _array[high] to new_array[k] through new_array[high]
-//
-//           // int k_index = k;
-//
-//            for (int j_index = j; j_index < high; j_index++){
-//                new_array[k] = _array[j_index];
-//                k++;
-//            }
-//
-//        }
-//        else{
-//            //move _array[i] through _array[mid] to new_array[k] through new_array[high]
-//            //int k_index = k;
-//            for (int i_index = i; i_index < mid; i_index++){
-//                new_array[k] = _array[i_index];
-//                k++;
-//            }
-//        }
-//        //move new_array[low] through new_array[high] to _array[low] through _array[high]
-//        for (int index = low; index < high; index++){
-//            _array[index] = new_array[index];
-//        }
+        int i = low;
+        int j = mid +1;
+        int k = low;
+
+        int [] new_array = new int[(high - low) + 1];
+        while (i <= mid && j <= high){
+            if (_array[i] < _array[j]){
+                new_array[k] = _array[i];
+                i++;
+            }
+            else{
+                new_array[k] = _array[j];
+                j++;
+            }
+            k++;
+        }
+        if (i > mid){
+            //move _array[j] through _array[high] to new_array[k] through new_array[high]
+
+            int k_index = k;
+
+            for (int j_index = j; j_index <= high; j_index++){
+                new_array[k] = _array[j_index];
+                k++;
+            }
+
+        }
+        else{
+           // move _array[i] through _array[mid] to new_array[k] through new_array[high]
+            int k_index = k;
+            for (int i_index = i; i_index < mid; i_index++){
+                new_array[k] = _array[i_index];
+                k++;
+            }
+        }
+       // move new_array[low] through new_array[high] to _array[low] through _array[high]
+        for (int index = low; index < high; index++){
+            _array[index] = new_array[index];
+        }
     }
     public void mergeSort(){
-        mergeSort(0, n);
+        mergeSort(0, n-1);
     }
     public void mergeSort(int low, int high){
         int mid;
