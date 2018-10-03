@@ -28,7 +28,8 @@ public class Main {
         int j = mid +1;
         int k = low;
 
-        int [] new_array = new int[(high - low) + 1];
+        int array_size = (high - low) + 1;
+        int [] new_array = new int[array_size];
         while (i <= mid && j <= high){
             if (_array[i] < _array[j]){
                 new_array[k] = _array[i];
