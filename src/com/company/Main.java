@@ -110,7 +110,7 @@ public class Main {
             if (_array[i] < pivotitem) {
                 j++;
                 //exchange S[i] and S[j];
-                int inner_temp = _array[i];
+                int inner_temp = _array[j];
                 _array[j] = _array[i];
                 _array[i] = inner_temp;
             }
