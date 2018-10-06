@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.stream.IntStream; //experimenting with functional for loop for formatting
 import java.lang.System;
+
 public class Main {
     public static int n = 4;
     public int[] _array = {1,2,5, 0};
@@ -23,6 +24,7 @@ public class Main {
 
         }
     }
+//    Merge Sort
     public void merge(int low, int mid, int high){
         int i = low;
         int j = mid +1;
@@ -85,21 +87,62 @@ public class Main {
         IntStream.range(0, n)
                 .forEach(i -> System.out.print(_array[i] + " "));
     }
+
+//    Quick Sort 1
+    public void quickSortOne(){
+        quicksort(0, n-1);
+    }
+    public void quicksort(int low, int high) {
+        int pivotpoint = 0; // passed by reference and set within partition
+        if (high > low){
+            int index = partition(low, high, pivotpoint);
+            quicksort(low, index - 1);
+            quicksort(index + 1, high);
+        }
+    }
+
+    public int partition(int low, int high, int pivotpoint){
+        int i, j;
+        //int pivotitem;
+        int pivotitem = _array[low]; // choose first item for pivot
+        j = low;
+        for (i = low + 1; i <= high; i++) {
+            if (_array[i] < pivotitem) {
+                j++;
+                //exchange S[i] and S[j];
+                int inner_temp = _array[i];
+                _array[j] = _array[i];
+                _array[i] = inner_temp;
+            }
+        }
+       pivotpoint = j;
+       //exchange S[low] and S[pivotpoint]; // put pivot item at pivot point
+        int outer_temp = _array[low];
+        _array[low] = _array[pivotpoint];
+        _array[pivotpoint] = outer_temp;
+        return pivotpoint;
+    }
+
     public static void main(String[] args) {
 
-//        Main my_program = new Main();
-//        System.out.print("Pre insertion sort the array is currently : " );
-//        my_program.view_array();
-//        System.out.println("\n");
-//        long startTime = System.nanoTime();
-//        my_program.insertionSort();
-//        long endTime   = System.nanoTime();
-//        System.out.print("Post insertion sort the array is now : " );
-//        my_program.view_array();
-//        System.out.println("\n");
-//        long totalTime = endTime - startTime;
-//        System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
 
+
+/*
+        Main my_program = new Main();
+        System.out.print("Pre insertion sort the array is currently : " );
+        my_program.view_array();
+        System.out.println("\n");
+        long startTime = System.nanoTime();
+        my_program.insertionSort();
+        long endTime   = System.nanoTime();
+        System.out.print("Post insertion sort the array is now : " );
+        my_program.view_array();
+        System.out.println("\n");
+        long totalTime = endTime - startTime;
+        System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
+*/
+
+/*
         Main my_program = new Main();
         System.out.print("Pre merge sort the array is currently : " );
         my_program.view_array();
@@ -112,8 +155,17 @@ public class Main {
         System.out.println("\n");
         //long totalTime = endTime - startTime;
         //System.out.println("The time for merge sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
-
-
+*/
+        Main my_program = new Main();
+        System.out.print("Pre quick sort #1 the array is currently : " );
+        my_program.view_array();
+        System.out.println("\n");
+        //long startTime = System.nanoTime();
+        my_program.quickSortOne();
+        //long endTime   = System.nanoTime();
+        System.out.print("Post quick sort #1 the array is now : " );
+        my_program.view_array();
+        System.out.println("\n");
 
     }
 }
