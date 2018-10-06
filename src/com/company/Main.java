@@ -2,10 +2,26 @@ package com.company;
 
 import java.util.stream.IntStream; //experimenting with functional for loop for formatting
 import java.lang.System;
+import java.util.Random;
+
 
 public class Main {
-    public static int n = 4;
-    public int[] _array = {1,2,5, 0};
+    //public static int n = 4;
+    //public int[] _array = {1,2,5, 0};
+
+    Random rand = new Random();
+    //generate random number between 2 and 100
+    public int  n = rand.nextInt(20) + 2;
+    //declare array of size n
+    public int[] _array = new int[n];
+
+    public void setArray(){
+        //fill random array
+        int end = n;
+        for (int index = 0; index < n; index++)
+            _array[index] = rand.nextInt(1000) + 0;
+    }
+
 
     public void insertionSort(){
         insertionSort(n, _array);
@@ -88,6 +104,7 @@ public class Main {
                 .forEach(i -> System.out.print(_array[i] + " "));
     }
 
+
 //    Quick Sort 1
     public void quickSortOne(){
         quicksort(0, n-1);
@@ -157,15 +174,16 @@ public class Main {
         //System.out.println("The time for merge sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
 */
         Main my_program = new Main();
-        System.out.print("Pre quick sort #1 the array is currently : " );
+        //System.out.print("Pre quick sort #1 the array is currently : " );
+        my_program.setArray();
         my_program.view_array();
-        System.out.println("\n");
+        /*System.out.println("\n");
         //long startTime = System.nanoTime();
         my_program.quickSortOne();
         //long endTime   = System.nanoTime();
         System.out.print("Post quick sort #1 the array is now : " );
         my_program.view_array();
-        System.out.println("\n");
+        System.out.println("\n");*/
 
     }
 }
