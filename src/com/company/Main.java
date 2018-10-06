@@ -1,30 +1,43 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.stream.IntStream; //experimenting with functional for loop for formatting
 import java.lang.System;
 import java.util.Random;
 
 
 public class Main {
-    //public static int n = 4;
-    //public int[] _array = {1,2,5, 0};
 
+    public int n;
+    public int[] _array;
     Random rand = new Random();
-    //generate random number between 2 and 100
-    public int  n = rand.nextInt(20) + 2;
-    //declare array of size n
-    public int[] _array = new int[n];
+
+    public Main(){
+        //generate random number between 2 and 100
+ //       this.n = rand.nextInt(40) + 3;
+        this.n = rand.nextInt(40) + 5;
+
+        //declare array of size n
+        this._array= new int[n];
+        this.setArray();
+    }
+
+
+    public int get_n(){
+        int temp = this.n;
+        return temp;
+    }
 
     public void setArray(){
         //fill random array
         int end = n;
         for (int index = 0; index < n; index++)
-            _array[index] = rand.nextInt(1000) + 0;
+            _array[index] = rand.nextInt(100) + 0;
     }
 
-
+//    Insertion Sort
     public void insertionSort(){
-        insertionSort(n, _array);
+        insertionSort(this.n, this._array);
     }
     public void insertionSort(int n, int[]_array){
         int i, j;
@@ -32,7 +45,7 @@ public class Main {
         for (i=0; i < n; i++){
             x = _array[i];
             j = i-1;
-            while (j > 0 && _array[j] > x){
+            while (j >= 0 && _array[j] > x){
                 _array[j+1] = _array[j];
                 j--;
             }
@@ -97,7 +110,7 @@ public class Main {
 
     }
     public void view_array(){
-        view_array(n,_array);
+        view_array(this.n, this._array);
     }
     public void view_array(int n, int _array[]){
         IntStream.range(0, n)
@@ -107,7 +120,18 @@ public class Main {
 
 //    Quick Sort 1
     public void quickSortOne(){
-        quicksort(0, n-1);
+        this.quicksort(0, n-1);
+    }
+
+    public void quickSortTwo(){
+        if (this.n >= 16) {
+            //System.out.println("Calling quick sort");
+            this.quickSortOne();
+        }
+        else {
+            //System.out.println("Calling insertion sort");
+            this.insertionSort();
+        }
     }
     public void quicksort(int low, int high) {
         int pivotpoint = 0; // passed by reference and set within partition
@@ -141,10 +165,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
 
-
-
-/*
+/*        System.out.println("\n");
         Main my_program = new Main();
         System.out.print("Pre insertion sort the array is currently : " );
         my_program.view_array();
@@ -156,8 +181,7 @@ public class Main {
         my_program.view_array();
         System.out.println("\n");
         long totalTime = endTime - startTime;
-        System.out.println("The time for insertion sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
-*/
+        System.out.println("The time for insertion sort to run with " + my_program.get_n() + " inputs is " + totalTime + " nanoseconds.");*/
 
 /*
         Main my_program = new Main();
@@ -173,10 +197,9 @@ public class Main {
         //long totalTime = endTime - startTime;
         //System.out.println("The time for merge sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
 */
-        Main my_program = new Main();
+        //Main my_program = new Main();
         //System.out.print("Pre quick sort #1 the array is currently : " );
-        my_program.setArray();
-        my_program.view_array();
+        //my_program.view_array();
         /*System.out.println("\n");
         //long startTime = System.nanoTime();
         my_program.quickSortOne();
