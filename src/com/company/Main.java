@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.stream.IntStream; //experimenting with functional for loop for formatting
 import java.lang.System;
 import java.util.Random;
@@ -14,8 +14,7 @@ public class Main {
 
     public Main(){
         //generate random number between 2 and 100
- //       this.n = rand.nextInt(40) + 3;
-        this.n = rand.nextInt(40) + 5;
+        this.n = rand.nextInt(10) + 3;
 
         //declare array of size n
         this._array= new int[n];
@@ -32,7 +31,7 @@ public class Main {
         //fill random array
         int end = n;
         for (int index = 0; index < n; index++)
-            _array[index] = rand.nextInt(100) + 0;
+            _array[index] = rand.nextInt(10) + 0;
     }
 
 //    Insertion Sort
@@ -54,61 +53,68 @@ public class Main {
         }
     }
 //    Merge Sort
-    public void merge(int low, int mid, int high){
-        int i = low;
-        int j = mid +1;
-        int k = low;
+    public void mergeSort(){
+        mergeSort(this.n, this._array);
+    }
 
-        int array_size = (high - low) + 1;
-        int [] new_array = new int[array_size];
-        while (i <= mid && j <= high){
-            if (_array[i] < _array[j]){
-                new_array[k] = _array[i];
-                i++;
-            }
-            else{
-                new_array[k] = _array[j];
+    public void merge(int u_len, int v_len, int V[], int U[], int og_array[]){
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while(i < u_len && j < v_len) {
+            if (U[i] < V[j]) {
+                og_array[k] = U[i];
+                i++; // i tracks how many values from U have been placed in S
+            } else {
+                og_array[k] = V[j];
                 j++;
             }
-            k++;
+            k++; // k tracks how many values have been placed in S
         }
-        if (i > mid){
-            //move _array[j] through _array[high] to new_array[k] through new_array[high]
-
-            int k_index = k;
-
-            for (int j_index = j; j_index <= high; j_index++){
-                new_array[k] = _array[j_index];
-                k++;
+        if (i >= u_len) {
+            // copy V[j] through V[vLen] to S[k] through S[uLen+vLen];
+            int v_index = j;
+            int stop = u_len+v_len;
+            for (int index = k; index < stop; index++){
+                og_array[index] = V[v_index++];
             }
 
         }
-        else{
-           // move _array[i] through _array[mid] to new_array[k] through new_array[high]
-            int k_index = k;
-            for (int i_index = i; i_index < mid; i_index++){
-                new_array[k] = _array[i_index];
-                k++;
+        else {
+            //copy U[i] through U[uLen] to S[k] through S[uLen+vLen]
+            int u_index = i;
+            int stop = u_len+v_len;
+
+            for (int index = k; index < stop; index++){
+                og_array[index] = U[u_index++];
             }
         }
-       // move new_array[low] through new_array[high] to _array[low] through _array[high]
-        for (int index = low; index < high; index++){
-            _array[index] = new_array[index];
-        }
     }
-    public void mergeSort(){
-        mergeSort(0, n-1);
-    }
-    public void mergeSort(int low, int high){
-        int mid;
-        if (low < high){
-            mid =  (low + high) / 2;
-            mergeSort(low, mid);
-            mergeSort((mid + 1) ,  high);
-            merge(low, mid, high);
-        }
 
+    public void mergeSort(int n, int[] array){
+        if (n >1){
+            int u_len = n/2;
+            int v_len = n - u_len;
+            int[] U = new int[u_len];
+            int[] V = new int[v_len];
+            //copy S[1] through S[uLen] to U[1] through U[uLen]
+            for (int index = 0; index < u_len; index++){
+                U[index] = array[index];
+            }
+            int v_index = 0;
+            //copy S[uLen+1] through S[n] to V[1] through V[vLen]
+            for (int index = u_len; index < n; index++){
+                V[v_index] = array[index];
+                v_index++;
+            }
+            mergeSort(u_len, U);
+            mergeSort(v_len, V);
+            merge(u_len, v_len, V, U, array);
+        }
     }
+
+
     public void view_array(){
         view_array(this.n, this._array);
     }
@@ -169,7 +175,9 @@ public class Main {
         for (int index=0;index<100; index++)
             System.out.print(' ');
 
-/*        System.out.println("\n");
+        System.out.println("\n");
+
+/*
         Main my_program = new Main();
         System.out.print("Pre insertion sort the array is currently : " );
         my_program.view_array();
@@ -183,7 +191,6 @@ public class Main {
         long totalTime = endTime - startTime;
         System.out.println("The time for insertion sort to run with " + my_program.get_n() + " inputs is " + totalTime + " nanoseconds.");*/
 
-/*
         Main my_program = new Main();
         System.out.print("Pre merge sort the array is currently : " );
         my_program.view_array();
@@ -194,16 +201,18 @@ public class Main {
         System.out.print("Post merge sort the array is now : " );
         my_program.view_array();
         System.out.println("\n");
-        //long totalTime = endTime - startTime;
-        //System.out.println("The time for merge sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
-*/
-        //Main my_program = new Main();
-        //System.out.print("Pre quick sort #1 the array is currently : " );
-        //my_program.view_array();
+
+/*        long totalTime = endTime - startTime;
+        System.out.println("The time for merge sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
+        Main my_program = new Main();
+        System.out.print("Pre quick sort #1 the array is currently : " );
+        my_program.view_array();
+        */
+
         /*System.out.println("\n");
-        //long startTime = System.nanoTime();
+        long startTime = System.nanoTime();
         my_program.quickSortOne();
-        //long endTime   = System.nanoTime();
+        long endTime   = System.nanoTime();
         System.out.print("Post quick sort #1 the array is now : " );
         my_program.view_array();
         System.out.println("\n");*/

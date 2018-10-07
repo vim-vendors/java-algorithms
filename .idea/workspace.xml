@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="babdbd7f-896c-40de-9ed9-85e85dfa1227" name="Default Changelist" comment="" />
+    <list default="true" id="babdbd7f-896c-40de-9ed9-85e85dfa1227" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AssignmentTwo/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AssignmentTwo/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,24 +65,25 @@
     <session id="-436102170">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2167" />
+          <entry key="java" value="2237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2167" />
+          <entry key="JAVA" value="2237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.16" value="3" />
+          <entry key="project.open.time.16" value="4" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -101,18 +106,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+            <state relative-caret-position="312">
+              <caret line="211" column="35" lean-forward="true" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#get_n#0;class#Main#0" />
                 <element signature="method#insertionSort#1;class#Main#0" />
+                <element signature="e#1298#1299#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
                 <element signature="method#merge#0;class#Main#0" />
                 <element signature="method#mergeSort#1;class#Main#0" />
-                <element signature="e#2672#2673#0" expanded="true" />
-                <element signature="e#2708#2709#0" expanded="true" />
                 <element signature="method#view_array#1;class#Main#0" />
-                <element signature="e#2912#2913#0" expanded="true" />
-                <element signature="e#2945#2946#0" expanded="true" />
+                <element signature="method#quickSortTwo#0;class#Main#0" />
                 <element signature="method#quicksort#0;class#Main#0" />
                 <element signature="method#partition#0;class#Main#0" />
               </folding>
@@ -213,11 +218,13 @@
       <workItem from="1538780885422" duration="3149000" />
       <workItem from="1538789304262" duration="6174000" />
       <workItem from="1538861718533" duration="4166000" />
+      <workItem from="1538897116630" duration="3988000" />
+      <workItem from="1538901568911" duration="1660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35323000" />
+    <option name="totallyTimeSpent" value="40971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -230,6 +237,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="741" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24924242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -241,7 +249,7 @@
       <window_info id="Favorites" order="7" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32901135" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3987034" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3484603" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -276,18 +284,18 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/InsertionSort.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+        <state relative-caret-position="312">
+          <caret line="211" column="35" lean-forward="true" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#get_n#0;class#Main#0" />
             <element signature="method#insertionSort#1;class#Main#0" />
+            <element signature="e#1298#1299#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
             <element signature="method#merge#0;class#Main#0" />
             <element signature="method#mergeSort#1;class#Main#0" />
-            <element signature="e#2672#2673#0" expanded="true" />
-            <element signature="e#2708#2709#0" expanded="true" />
             <element signature="method#view_array#1;class#Main#0" />
-            <element signature="e#2912#2913#0" expanded="true" />
-            <element signature="e#2945#2946#0" expanded="true" />
+            <element signature="method#quickSortTwo#0;class#Main#0" />
             <element signature="method#quicksort#0;class#Main#0" />
             <element signature="method#partition#0;class#Main#0" />
           </folding>
