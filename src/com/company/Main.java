@@ -11,10 +11,11 @@ public class Main {
     public int n;
     public int[] _array;
     Random rand = new Random();
+    Random rando_pivot = new Random();
 
     public Main(){
         //generate random number between 2 and 100
-        this.n = rand.nextInt(10) + 3;
+        this.n = rand.nextInt(50) + 3;
 
         //declare array of size n
         this._array= new int[n];
@@ -31,7 +32,7 @@ public class Main {
         //fill random array
         int end = n;
         for (int index = 0; index < n; index++)
-            _array[index] = rand.nextInt(10) + 0;
+            _array[index] = rand.nextInt(100) + 0;
     }
 
 //    Insertion Sort
@@ -148,7 +149,20 @@ public class Main {
             quicksort(index + 1, high);
         }
     }
+    public void quicksortRando(){
+        this.quicksortRando(0, n-1);
+    }
 
+    public void quicksortRando(int low, int high) {
+        int pivotpoint = rando_pivot.nextInt(high) + low; // passed by reference and set within partition
+
+        if (high > low){
+
+            int index = partition(low, high, pivotpoint);
+            quicksort(low, index - 1);
+            quicksort(index + 1, high);
+        }
+    }
     public int partition(int low, int high, int pivotpoint){
         int i, j;
         //int pivotitem;
@@ -193,13 +207,13 @@ public class Main {
         System.out.println("The time for insertion sort to run with " + my_program.get_n() + " inputs is " + totalTime + " nanoseconds.");*/
 
         Main my_program = new Main();
-        System.out.print("Pre merge sort the array is currently : " );
+        System.out.print("Pre rando sort the array is currently : " );
         my_program.view_array();
         System.out.println("\n");
         //long startTime = System.nanoTime();
-        my_program.mergeSort();
+        my_program.quicksortRando();
         //long endTime   = System.nanoTime();
-        System.out.print("Post merge sort the array is now : " );
+        System.out.print("Post rando sort the array is now : " );
         my_program.view_array();
         System.out.println("\n");
 

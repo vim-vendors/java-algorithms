@@ -32,18 +32,19 @@
     <session id="-839809926">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.21" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1546" />
+          <entry key="java" value="1633" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1546" />
+          <entry key="JAVA" value="1633" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,20 +105,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="127" column="6" selection-start-line="127" selection-start-column="6" selection-end-line="127" selection-end-column="6" />
+            <state relative-caret-position="348">
+              <caret line="217" column="33" lean-forward="true" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Main#0;class#Main#0" />
                 <element signature="method#get_n#0;class#Main#0" />
-                <element signature="method#setArray#0;class#Main#0" />
                 <element signature="method#insertionSort#1;class#Main#0" />
                 <element signature="method#merge#0;class#Main#0" />
                 <element signature="method#mergeSort#1;class#Main#0" />
                 <element signature="method#view_array#1;class#Main#0" />
-                <element signature="method#quickSortTwo#0;class#Main#0" />
-                <element signature="method#quicksort#0;class#Main#0" />
-                <element signature="method#partition#0;class#Main#0" />
+                <element signature="e#3394#3395#0" expanded="true" />
+                <element signature="e#3432#3433#0" expanded="true" />
+                <element signature="e#4131#4132#0" expanded="true" />
+                <element signature="e#4169#4170#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,9 +156,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="741" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="1920" />
+    <option name="y" value="72" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -218,11 +221,12 @@
       <workItem from="1538861718533" duration="4166000" />
       <workItem from="1538897116630" duration="3988000" />
       <workItem from="1538901568911" duration="2010000" />
+      <workItem from="1539067894171" duration="481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41321000" />
+    <option name="totallyTimeSpent" value="41802000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -234,7 +238,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="741" extended-state="0" />
+    <frame x="1920" y="72" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24924242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -246,13 +251,13 @@
       <window_info id="Favorites" order="7" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3987034" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3980198" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3484603" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901135" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2560778" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.16435644" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32901135" />
@@ -281,20 +286,20 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/InsertionSort.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="127" column="6" selection-start-line="127" selection-start-column="6" selection-end-line="127" selection-end-column="6" />
+        <state relative-caret-position="348">
+          <caret line="217" column="33" lean-forward="true" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Main#0;class#Main#0" />
             <element signature="method#get_n#0;class#Main#0" />
-            <element signature="method#setArray#0;class#Main#0" />
             <element signature="method#insertionSort#1;class#Main#0" />
             <element signature="method#merge#0;class#Main#0" />
             <element signature="method#mergeSort#1;class#Main#0" />
             <element signature="method#view_array#1;class#Main#0" />
-            <element signature="method#quickSortTwo#0;class#Main#0" />
-            <element signature="method#quicksort#0;class#Main#0" />
-            <element signature="method#partition#0;class#Main#0" />
+            <element signature="e#3394#3395#0" expanded="true" />
+            <element signature="e#3432#3433#0" expanded="true" />
+            <element signature="e#4131#4132#0" expanded="true" />
+            <element signature="e#4169#4170#0" expanded="true" />
           </folding>
         </state>
       </provider>
