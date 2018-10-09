@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="babdbd7f-896c-40de-9ed9-85e85dfa1227" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AssignmentTwo/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AssignmentTwo/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -65,17 +63,17 @@
     <session id="-436102170">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2237" />
+          <entry key="java" value="2294" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2237" />
+          <entry key="JAVA" value="2294" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="4" />
@@ -106,14 +104,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="211" column="35" lean-forward="true" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
+            <state relative-caret-position="293">
+              <caret line="127" column="6" selection-start-line="127" selection-start-column="6" selection-end-line="127" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#Main#0;class#Main#0" />
                 <element signature="method#get_n#0;class#Main#0" />
+                <element signature="method#setArray#0;class#Main#0" />
                 <element signature="method#insertionSort#1;class#Main#0" />
-                <element signature="e#1298#1299#0" expanded="true" />
-                <element signature="e#1334#1335#0" expanded="true" />
                 <element signature="method#merge#0;class#Main#0" />
                 <element signature="method#mergeSort#1;class#Main#0" />
                 <element signature="method#view_array#1;class#Main#0" />
@@ -219,12 +217,12 @@
       <workItem from="1538789304262" duration="6174000" />
       <workItem from="1538861718533" duration="4166000" />
       <workItem from="1538897116630" duration="3988000" />
-      <workItem from="1538901568911" duration="1660000" />
+      <workItem from="1538901568911" duration="2010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40971000" />
+    <option name="totallyTimeSpent" value="41321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -237,7 +235,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="741" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24924242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -284,14 +281,14 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/InsertionSort.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="211" column="35" lean-forward="true" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
+        <state relative-caret-position="293">
+          <caret line="127" column="6" selection-start-line="127" selection-start-column="6" selection-end-line="127" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Main#0;class#Main#0" />
             <element signature="method#get_n#0;class#Main#0" />
+            <element signature="method#setArray#0;class#Main#0" />
             <element signature="method#insertionSort#1;class#Main#0" />
-            <element signature="e#1298#1299#0" expanded="true" />
-            <element signature="e#1334#1335#0" expanded="true" />
             <element signature="method#merge#0;class#Main#0" />
             <element signature="method#mergeSort#1;class#Main#0" />
             <element signature="method#view_array#1;class#Main#0" />

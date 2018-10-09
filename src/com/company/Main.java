@@ -52,6 +52,7 @@ public class Main {
 
         }
     }
+
 //    Merge Sort
     public void mergeSort(){
         mergeSort(this.n, this._array);
@@ -114,7 +115,7 @@ public class Main {
         }
     }
 
-
+    //Output
     public void view_array(){
         view_array(this.n, this._array);
     }
@@ -124,11 +125,11 @@ public class Main {
     }
 
 
-//    Quick Sort 1
+    //Quick Sort 1
     public void quickSortOne(){
         this.quicksort(0, n-1);
     }
-
+    //Quick Sort Two (Hybrid quick sort)
     public void quickSortTwo(){
         if (this.n >= 16) {
             //System.out.println("Calling quick sort");
