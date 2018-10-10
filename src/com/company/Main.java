@@ -1,10 +1,8 @@
 package com.company;
 
-//import java.util.Arrays;
 import java.util.stream.IntStream; //experimenting with functional for loop for formatting
 import java.lang.System;
 import java.util.Random;
-import java.lang.InterruptedException;
 
 
 public class Main {
@@ -391,7 +389,7 @@ public class Main {
 
         System.out.println("\n");
 
-        //Quick sort one sorted crashes due to Stack Overflow errors once it gets to 2^14
+        //Quick sort three sorted crashes due to Stack Overflow errors once it gets to 2^14
 
         //Test quick sort sorted
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="babdbd7f-896c-40de-9ed9-85e85dfa1227" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -65,12 +64,12 @@
     <session id="-436102170">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3998" />
+          <entry key="java" value="4006" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3998" />
+          <entry key="JAVA" value="4006" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -107,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="557" column="59" lean-forward="true" selection-start-line="557" selection-start-column="59" selection-end-line="557" selection-end-column="59" />
+            <state relative-caret-position="295">
+              <caret line="540" column="29" lean-forward="true" selection-end-line="567" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#852#853#0" expanded="true" />
@@ -158,7 +157,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="width" value="1366" />
     <option name="height" value="768" />
   </component>
@@ -171,7 +170,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539148734840" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539154402608" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.FreeMarker" />
   </component>
   <component name="RunDashboard">
@@ -222,12 +221,12 @@
       <workItem from="1538897116630" duration="3988000" />
       <workItem from="1538901568911" duration="2010000" />
       <workItem from="1539067894171" duration="481000" />
-      <workItem from="1539140482143" duration="8306000" />
+      <workItem from="1539140482143" duration="9122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50146000" />
+    <option name="totallyTimeSpent" value="50962000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -258,7 +257,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901135" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924242" weight="0.19875777" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49924242" visible="true" weight="0.371118" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12878788" side_tool="true" weight="0.91770184" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.0" />
@@ -287,8 +286,8 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/InsertionSort.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="557" column="59" lean-forward="true" selection-start-line="557" selection-start-column="59" selection-end-line="557" selection-end-column="59" />
+        <state relative-caret-position="295">
+          <caret line="540" column="29" lean-forward="true" selection-end-line="567" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#852#853#0" expanded="true" />
