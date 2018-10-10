@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="babdbd7f-896c-40de-9ed9-85e85dfa1227" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -64,25 +65,26 @@
     <session id="-436102170">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2294" />
+          <entry key="java" value="3998" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2294" />
+          <entry key="JAVA" value="3998" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="4" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -105,20 +107,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="217" column="33" lean-forward="true" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+            <state relative-caret-position="324">
+              <caret line="557" column="59" lean-forward="true" selection-start-line="557" selection-start-column="59" selection-end-line="557" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Main#0;class#Main#0" />
-                <element signature="method#get_n#0;class#Main#0" />
-                <element signature="method#insertionSort#1;class#Main#0" />
-                <element signature="method#merge#0;class#Main#0" />
-                <element signature="method#mergeSort#1;class#Main#0" />
-                <element signature="method#view_array#1;class#Main#0" />
-                <element signature="e#3394#3395#0" expanded="true" />
-                <element signature="e#3432#3433#0" expanded="true" />
-                <element signature="e#4131#4132#0" expanded="true" />
-                <element signature="e#4169#4170#0" expanded="true" />
+                <element signature="e#852#853#0" expanded="true" />
+                <element signature="e#902#903#0" expanded="true" />
+                <element signature="e#1279#1280#0" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
+                <element signature="e#3183#3184#0" expanded="true" />
+                <element signature="e#3230#3231#0" expanded="true" />
+                <element signature="e#3434#3435#0" expanded="true" />
+                <element signature="e#3472#3473#0" expanded="true" />
+                <element signature="e#4132#4133#0" expanded="true" />
+                <element signature="e#4175#4176#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,11 +158,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1920" />
-    <option name="y" value="72" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,7 +171,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538865730068" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539148734840" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.FreeMarker" />
   </component>
   <component name="RunDashboard">
@@ -222,11 +222,12 @@
       <workItem from="1538897116630" duration="3988000" />
       <workItem from="1538901568911" duration="2010000" />
       <workItem from="1539067894171" duration="481000" />
+      <workItem from="1539140482143" duration="8306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41802000" />
+    <option name="totallyTimeSpent" value="50146000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -238,7 +239,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="72" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24924242" />
@@ -251,16 +252,16 @@
       <window_info id="Favorites" order="7" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3980198" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8712121" weight="0.91770184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3484603" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901135" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.16435644" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924242" weight="0.19875777" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12878788" side_tool="true" weight="0.91770184" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32901135" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
@@ -286,20 +287,20 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/InsertionSort.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="217" column="33" lean-forward="true" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+        <state relative-caret-position="324">
+          <caret line="557" column="59" lean-forward="true" selection-start-line="557" selection-start-column="59" selection-end-line="557" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Main#0;class#Main#0" />
-            <element signature="method#get_n#0;class#Main#0" />
-            <element signature="method#insertionSort#1;class#Main#0" />
-            <element signature="method#merge#0;class#Main#0" />
-            <element signature="method#mergeSort#1;class#Main#0" />
-            <element signature="method#view_array#1;class#Main#0" />
-            <element signature="e#3394#3395#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#3183#3184#0" expanded="true" />
+            <element signature="e#3230#3231#0" expanded="true" />
+            <element signature="e#3434#3435#0" expanded="true" />
+            <element signature="e#3472#3473#0" expanded="true" />
+            <element signature="e#4132#4133#0" expanded="true" />
+            <element signature="e#4175#4176#0" expanded="true" />
           </folding>
         </state>
       </provider>

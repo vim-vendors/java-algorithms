@@ -4,22 +4,34 @@ package com.company;
 import java.util.stream.IntStream; //experimenting with functional for loop for formatting
 import java.lang.System;
 import java.util.Random;
+import java.lang.InterruptedException;
 
 
 public class Main {
 
+    public double exp;
     public int n;
     public int[] _array;
+    boolean is_random = false;
+   // public
     Random rand = new Random();
     Random rando_pivot = new Random();
 
-    public Main(){
+
+    public Main(int exponent, boolean random){
         //generate random number between 2 and 100
-        this.n = rand.nextInt(50) + 3;
+        //this.n = rand.nextInt(50) + 3;
+        this.exp = Math.pow(2, exponent);
+        n = (int) Math.round(exp);
+
 
         //declare array of size n
         this._array= new int[n];
-        this.setArray();
+
+        if (random)
+            this.setArrayRandom();
+        else
+            this.setArray();
     }
 
 
@@ -28,11 +40,18 @@ public class Main {
         return temp;
     }
 
+    public void setArrayRandom(){
+        //fill random array
+        int end = this.n;
+        for (int index = 0; index < n; index++)
+            _array[index] = rand.nextInt(100) + 1;
+    }
+
     public void setArray(){
         //fill random array
-        int end = n;
+        int end = this.n;
         for (int index = 0; index < n; index++)
-            _array[index] = rand.nextInt(100) + 0;
+            _array[index] = index;
     }
 
 //    Insertion Sort
@@ -154,10 +173,12 @@ public class Main {
     }
 
     public void quicksortRando(int low, int high) {
-        int pivotpoint = rando_pivot.nextInt(high) + low; // passed by reference and set within partition
+        int pivotpoint = 0;
 
         if (high > low){
-
+            if (this.n > 16){
+                pivotpoint = rando_pivot.nextInt(high) + low; // passed by reference and set within partition
+            }
             int index = partition(low, high, pivotpoint);
             quicksort(low, index - 1);
             quicksort(index + 1, high);
@@ -192,45 +213,356 @@ public class Main {
 
         System.out.println("\n");
 
-/*
-        Main my_program = new Main();
-        System.out.print("Pre insertion sort the array is currently : " );
-        my_program.view_array();
-        System.out.println("\n");
-        long startTime = System.nanoTime();
-        my_program.insertionSort();
-        long endTime   = System.nanoTime();
-        System.out.print("Post insertion sort the array is now : " );
-        my_program.view_array();
-        System.out.println("\n");
-        long totalTime = endTime - startTime;
-        System.out.println("The time for insertion sort to run with " + my_program.get_n() + " inputs is " + totalTime + " nanoseconds.");*/
 
-        Main my_program = new Main();
-        System.out.print("Pre rando sort the array is currently : " );
-        my_program.view_array();
-        System.out.println("\n");
-        //long startTime = System.nanoTime();
-        my_program.quicksortRando();
-        //long endTime   = System.nanoTime();
-        System.out.print("Post rando sort the array is now : " );
-        my_program.view_array();
+
+        //Test insertion sort random
+        long[] insertion_time_array = new long[16];
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, true);
+
+            while (counter < 10){
+                //copy array into new object, I know this is a poor approach :(
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.insertionSort();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            insertion_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for random insertion sort to run with 2^" + index + " power inputs is " + insertion_time_array[index-1] + " nanoseconds.");
+        }
+
+        System.gc();
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
         System.out.println("\n");
 
-/*        long totalTime = endTime - startTime;
-        System.out.println("The time for merge sort to run with " + n + " inputs is " + totalTime + " nanoseconds.");
-        Main my_program = new Main();
-        System.out.print("Pre quick sort #1 the array is currently : " );
-        my_program.view_array();
-        */
+        //Test insertion sort sorted
 
-        /*System.out.println("\n");
-        long startTime = System.nanoTime();
-        my_program.quickSortOne();
-        long endTime   = System.nanoTime();
-        System.out.print("Post quick sort #1 the array is now : " );
-        my_program.view_array();
-        System.out.println("\n");*/
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, false);
+
+            while (counter < 10){
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.insertionSort();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            insertion_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for sorted insertion sort to run with 2^" + index + " power inputs is " + insertion_time_array[index-1] + " nanoseconds.");
+        }
+
+
+        System.gc();
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+
+
+        //Test merge sort random
+        long[] merge_time_array = new long[16];
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, true);
+
+            while (counter < 10){
+                //copy array into new object, I know this is a poor approach :(
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.mergeSort();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            merge_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for random merge sort to run with 2^" + index + " power inputs is " + merge_time_array[index-1] + " nanoseconds.");
+        }
+
+        System.gc();
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+        //Test merge sort sorted
+
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, false);
+
+            while (counter < 10){
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.mergeSort();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            merge_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for sorted merge sort to run with 2^" + index + " power inputs is " + merge_time_array[index-1] + " nanoseconds.");
+        }
+
+        System.gc();
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+        //Test quick sort random
+        long[] quick_time_array = new long[16];
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, true);
+
+            while (counter < 10){
+                //copy array into new object, I know this is a poor approach :(
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.quickSortOne();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            quick_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for random quick sort to run with 2^" + index + " power inputs is " + quick_time_array[index-1] + " nanoseconds.");
+        }
+
+        System.gc();
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+        //Quick sort one sorted crashes due to Stack Overflow errors once it gets to 2^14
+
+        //Test quick sort sorted
+
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, false);
+
+            while (counter < 10){
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.quickSortOne();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            quick_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for sorted quick sort to run with 2^" + index + " power inputs is " + quick_time_array[index-1] + " nanoseconds.");
+        }
+
+
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+
+        //Test quick sort 2 random
+        long[] quick_time_array = new long[16];
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, true);
+
+            while (counter < 10){
+                //copy array into new object, I know this is a poor approach :(
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.quickSortTwo();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            quick_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for random hybrid quick sort to run with 2^" + index + " power inputs is " + quick_time_array[index-1] + " nanoseconds.");
+        }
+
+        System.gc();
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+        //Quick sort one sorted crashes due to Stack Overflow errors once it gets to 2^14
+
+        //Test quick sort 2 sorted
+
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, false);
+
+            while (counter < 10){
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.quickSortTwo();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            quick_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for sorted hyrbid quick sort to run with 2^" + index + " power inputs is " + quick_time_array[index-1] + " nanoseconds.");
+        }
+
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+
+        //Test random quick sort 3 random
+        long[] quick_time_array = new long[16];
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, true);
+
+            while (counter < 10){
+                //copy array into new object, I know this is a poor approach :(
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.quicksortRando();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            quick_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for random randomized quick sort to run with 2^" + index + " power inputs is " + quick_time_array[index-1] + " nanoseconds.");
+        }
+
+        System.gc();
+
+        //Initialize JVM
+        for (int index=0;index<100; index++)
+            System.out.print(' ');
+
+        System.out.println("\n");
+
+        //Quick sort one sorted crashes due to Stack Overflow errors once it gets to 2^14
+
+        //Test quick sort 3 sorted
+
+        for (int index =1; index < 17; index++){
+            long[] temp_time_array = new long[10];
+            long counter = 0;
+            int count = 0;
+            long sum = 0;
+            Main og_program = new Main(index, false);
+
+            while (counter < 10){
+                Main test_program = new Main(index, false);
+                for (int i = 0; i < og_program.get_n(); i++)
+                    test_program._array[i] = og_program._array[i];
+                long startTime = System.nanoTime();
+                test_program.quicksortRando();
+                long endTime   = System.nanoTime();
+                temp_time_array[count++] = endTime - startTime;
+                counter++;
+            }
+            for (int inner_i = 0; inner_i < 10; inner_i++){
+                sum += temp_time_array[inner_i];
+            }
+            quick_time_array[index-1] = sum / 10;
+            System.out.println("The avg time for sorted randomized quick sort to run with 2^" + index + " power inputs is " + quick_time_array[index-1] + " nanoseconds.");
+        }
+
+
 
     }
 }
